@@ -1,0 +1,191 @@
+
+button {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 2rem;
+  cursor: pointer;
+  outline: none;
+  background: white;
+  border: none;
+  border-radius: 1rem;
+  /* box-shadow: 0 0.2rem 0.5rem #aaa; */
+  overflow: hidden;
+}
+button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+button.events::before {
+  background: #ff6b6b;
+}
+button.groups::before {
+  background: #ff9f1c;
+}
+button.pages::before {
+  background: #4ecdc4;
+  background: #0082c8;
+  background: #ff6b6b;
+}
+button.roam::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(1.42) rotate(-45deg) transformX(-100%);
+  visibility: hidden;
+
+}
+button.roam:hover {
+  color: white;
+}
+button.roam:hover svg {
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+button.roam:hover::before {
+  visibility: visible;
+  transform-origin: center;
+  animation: roam 1s;
+}
+button.float::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(1.42) rotate(-45deg) transformX(-100%);
+  visibility: hidden;
+
+}
+button.float:hover {
+  color: white;
+}
+button.float:hover svg {
+  transition: 0.33s ease;
+  transform: translate(-50%, -75%) scale(1.1);
+}
+button.float:hover::before {
+  visibility: visible;
+}
+button.float::after {
+  position: absolute;
+  color: white;
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  visibility: hidden;
+}
+button.float:hover::after {
+  visibility: visible;
+  transform: translateY(70%);
+  transition: 0.33s;
+}
+@keyframes roam {
+  0% {
+    transform: scale(1.42) rotate(-45deg) translateX(-100%);
+ }
+  33% {
+    transform: scale(1.42) rotate(-45deg) translateX(0%);
+ }
+  60% {
+    transform: scale(1.42) rotate(-45deg) translateX(30%);
+ }
+  100% {
+    transform: scale(1.42) rotate(-45deg) translateX(0%);
+ }
+  100% {
+    transform: scale(1.42) rotate(-45deg) translateX(0);
+ }
+}
+button.border-effect {
+  border-radius: 0;
+ /* unhover transition */
+ /* hover transition */
+}
+button.border-effect .btn-borders {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+button.border-effect .btn-borders [class^=border] {
+  position: absolute;
+}
+button.border-effect.events .btn-borders [class^=border] {
+  background: #ff6b6b;
+}
+button.border-effect.groups .btn-borders [class^=border] {
+  background: #4ecdc4;
+}
+button.border-effect.pages .btn-borders [class^=border] {
+  background: #ff9f1c;
+}
+button.border-effect .border-top {
+  top: 0;
+  width: 100%;
+  height: 1.75px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+button.border-effect .border-right {
+  right: 0;
+  width: 1.75px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+button.border-effect .border-bottom {
+  bottom: 0;
+  width: 100%;
+  height: 1.75px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+button.border-effect .border-left {
+  left: 0;
+  width: 1.75px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+button.border-effect .border-left, button.border-effect .border-bottom {
+  transition: 0.25s 0.15s cubic-bezier(0.19, 1, 0.22, 1);
+}
+button.border-effect .border-right, button.border-effect .border-top {
+  transition: 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+button.border-effect:hover .border-top, button.border-effect:hover .border-bottom {
+  transform: scaleX(1);
+}
+button.border-effect:hover .border-left, button.border-effect:hover .border-right {
+  transform: scaleY(1);
+}
+button.border-effect:hover .border-left, button.border-effect:hover .border-bottom {
+  transition: 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+button.border-effect:hover .border-right, button.border-effect:hover .border-top {
+  transition: 0.25s 0.15s cubic-bezier(0.19, 1, 0.22, 1);
+}
+button.pulse {
+  border-radius: 2.5rem;
+}
+button.pulse:hover {
+  box-shadow: 0 0 0 1rem transparent;
+  animation: pulse 1s;
+}
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0 #aaa;
+ }
+}

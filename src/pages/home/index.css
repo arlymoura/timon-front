@@ -1,0 +1,40 @@
+.conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+ * {
+	 font-family: "Montserrat", sans-serif;
+	 box-sizing: border-box;
+}
+ body {
+	 width: 100vw;
+	 height: 100vh;
+	 padding: 0;
+	 margin: 0;
+	 /* background: #1565c093; */
+   background: #1488CC;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #1565c093, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #1565c093, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	 display: flex;
+	 justify-content: center;
+}
+ .container {
+	 /* display: grid; */
+	 margin-top: 8rem;
+	 grid-template-columns: 19rem 17rem 17rem 17rem;
+	 grid-template-rows: repeat(5, 7rem);
+}
+ .label {
+	 width: 7rem;
+	 height: 5rem;
+	 margin: 1rem;
+	 text-align: left;
+	 font-size: 1rem;
+	 display: flex;
+	 align-items: center;
+}
